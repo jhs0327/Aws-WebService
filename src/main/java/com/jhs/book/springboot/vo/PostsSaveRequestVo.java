@@ -12,6 +12,7 @@ public class PostsSaveRequestVo {
     private String title;
     private String content;
     private String author;
+
     @Builder
     public PostsSaveRequestVo(String title, String content, String author)
     {
@@ -20,9 +21,9 @@ public class PostsSaveRequestVo {
         this.author = author;
     }
 
-    public Posts toEneity()
+    public Posts toEntity()
     {
-        return Posts.builder()
+        return  Posts.builder()
                 .title(title)
                 .content(content)
                 .author(author)

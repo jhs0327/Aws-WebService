@@ -2,11 +2,11 @@ package com.jhs.book.springboot.web;
 
 
 import com.jhs.book.springboot.service.PostsService;
+import com.jhs.book.springboot.vo.PostsResponseVo;
 import com.jhs.book.springboot.vo.PostsSaveRequestVo;
+import com.jhs.book.springboot.vo.PostsUpdateRequestVo;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
@@ -19,4 +19,20 @@ public class PostsApiController
     {
         return postsService.save(requestVo);
     }
+
+    @PutMapping("api/v1/posts/{id}")
+    public Long updata (@PathVariable Long id, @RequestBody PostsUpdateRequestVo requestVo)
+    {
+        return postsService.update(id, requestVo);
+    }
+    @GetMapping("api/v1/posts/{id}")
+    public PostsResponseVo findById (@PathVariable Long id)
+    {
+        return postsService.findById(id);
+    }
+
+
+
+
+
 }
