@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-//생성자 자동 생성
+// @NoArgsConstructor : 생성자 자동 생성
 public class PostsUpdateRequestVo
 {
     private String title;
